@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Reports — PaperDesk</title>
+  <link rel="icon" type="image/png" href="assets/download (2).png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <!-- ── NAVBAR ───────────────────────────────────────────────── -->
+  <header class="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="brand">
+        <span class="brand-mark">
+          <img src="assets/download (1).png" alt="PaperDesk Logo">
+        </span>
+        <div class="brand-text">
+          <span class="brand-name">PaperDesk</span>
+          <span class="brand-tagline">Learn Before You Earn</span>
+        </div>
+      </a>
+
+      <nav class="nav-links">
+        <a href="index.html" class="nav-link">Watchlist</a>
+        <a href="positions.html" class="nav-link">Positions</a>
+        <a href="portfolio.html" class="nav-link">Portfolio</a>
+        <a href="orders.html" class="nav-link">Orders</a>
+        <a href="reports.html" class="nav-link active">Reports</a>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+          <span class="theme-icon sun">☀</span>
+          <span class="theme-icon moon">◑</span>
+        </button>
+        <a href="login.html" class="btn-login" id="navLoginBtn">Login</a>
+        <div class="nav-user" id="navUser" style="display:none;">
+          <button class="avatar-btn" id="avatarBtn" aria-haspopup="true" aria-expanded="false">
+            <span class="avatar-circle" id="avatarInitial"></span>
+          </button>
+          <div class="avatar-dropdown" id="avatarDropdown">
+            <div class="avatar-dropdown-name" id="avatarDropdownName"></div>
+            <a href="profile.html" class="dropdown-item">Profile</a>
+            <button class="dropdown-item dropdown-item-danger" id="navLogout">Logout</button>
+          </div>
+        </div>
+      </div>
+
+      <button class="hamburger" id="hamburger" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="index.html" class="mobile-link">Watchlist</a>
+      <a href="positions.html" class="mobile-link">Positions</a>
+      <a href="portfolio.html" class="mobile-link">Portfolio</a>
+      <a href="orders.html" class="mobile-link">Orders</a>
+      <a href="reports.html" class="mobile-link active">Reports</a>
+      <a href="profile.html" class="mobile-link" id="mobileProfileLink" style="display:none;">Profile</a>
+      <button class="mobile-link" id="mobileThemeToggle" style="text-align:left; background:none; border:none; width:100%; cursor:pointer;">Toggle Theme</button>
+      <a href="login.html" class="mobile-link" id="mobileLoginLink">Login</a>
+    </div>
+  </header>
+
+  <main class="main">
+    <p class="section-eyebrow" style="margin-top:8px;">Analytics</p>
+    <h1 style="font-size:26px; font-weight:600; margin-bottom:20px;">Reports</h1>
+
+    <!-- ── TABS ─────────────────────────────────────────────────── -->
+    <div class="report-tabs" role="tablist">
+      <button class="report-tab active" data-tab="pnl" role="tab" aria-selected="true">P&amp;L Summary</button>
+      <button class="report-tab" data-tab="tradebook" role="tab" aria-selected="false">TradeBook</button>
+      <button class="report-tab" data-tab="analyser" role="tab" aria-selected="false">Portfolio Analyser</button>
+    </div>
+
+    <!-- ── TAB 1: P&L SUMMARY ──────────────────────────────────── -->
+    <section class="report-panel active" id="tab-pnl">
+      <div class="date-filter" id="pnlDateFilter">
+        <button class="date-chip" data-range="today">Today</button>
+        <button class="date-chip" data-range="7d">7D</button>
+        <button class="date-chip" data-range="30d">30D</button>
+        <button class="date-chip active" data-range="all">All Time</button>
+        <button class="date-chip" data-range="custom">Custom</button>
+        <div class="date-custom-inputs" id="pnlCustomInputs">
+          <input type="date" id="pnlDateFrom" />
+          <span style="color:var(--text-3); font-size:12px;">to</span>
+          <input type="date" id="pnlDateTo" />
+          <button class="panel-action" id="pnlCustomApply">Apply</button>
+        </div>
+      </div>
+      <p style="font-size:12px; color:var(--text-3); margin-top:-8px;">
+        Realized P&amp;L and closed trades reflect the selected date range.
+      </p>
+
+      <section class="cards-row" id="pnlStatsRow">
+        <div class="stat-card">
+          <span class="stat-label">Realized P&amp;L</span>
+          <span class="stat-value mono" id="pnlRealized">₹0.00</span>
+          <span class="stat-pct mono" id="pnlRealizedPct"></span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-label">Closed Trades</span>
+          <span class="stat-value mono" id="pnlClosedTrades">0</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-label">Top Gainer</span>
+          <span class="stat-value mono" id="pnlTopGainer">—</span>
+          <span class="stat-pct mono" id="pnlTopGainerPnl"></span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-label">Top Loser</span>
+          <span class="stat-value mono" id="pnlTopLoser">—</span>
+          <span class="stat-pct mono" id="pnlTopLoserPnl"></span>
+        </div>
+      </section>
+
+      <section class="panel panel-full">
+        <div class="panel-header">
+          <h2 class="panel-title">Realized P&amp;L by Symbol</h2>
+          <span class="panel-badge" id="pnlBySymbolCount">0 symbols</span>
+        </div>
+        <div class="table-scroll">
+          <table class="data-table" id="pnlBySymbolTable">
+            <thead>
+              <tr>
+                <th>Symbol</th>
+                <th class="align-right col-hide-mobile">Sells</th>
+                <th class="align-right">Qty Sold</th>
+                <th class="align-right col-hide-mobile">Sell Value</th>
+                <th class="align-right">Realized P&amp;L</th>
+                <th class="align-right">Return %</th>
+              </tr>
+            </thead>
+            <tbody id="pnlBySymbolBody">
+              <tr><td colspan="6" style="text-align:center; color:var(--text-3); padding:32px 20px;">Loading…</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </section>
+
+    <!-- ── TAB 2: TRADEBOOK ────────────────────────────────────── -->
+    <section class="report-panel" id="tab-tradebook">
+      <section class="panel panel-full orders-panel">
+        <div class="panel-header" style="flex-wrap:wrap; gap:12px;">
+          <h2 class="panel-title">TradeBook</h2>
+          <div class="date-filter" id="tbDateFilter">
+            <button class="date-chip" data-range="today">Today</button>
+            <button class="date-chip" data-range="7d">7D</button>
+            <button class="date-chip" data-range="30d">30D</button>
+            <button class="date-chip active" data-range="all">All Time</button>
+            <button class="date-chip" data-range="custom">Custom</button>
+            <div class="date-custom-inputs" id="tbCustomInputs">
+              <input type="date" id="tbDateFrom" />
+              <span style="color:var(--text-3); font-size:12px;">to</span>
+              <input type="date" id="tbDateTo" />
+              <button class="panel-action" id="tbCustomApply">Apply</button>
+            </div>
+          </div>
+          <div style="display:flex; gap:8px; align-items:center;">
+            <div class="wl-sort-wrap">
+              <button class="panel-action" id="tbFilterBtn" title="Filter">⇅ Filter</button>
+              <div class="wl-sort-popover" id="tbFilterPopover">
+                <div class="wl-sort-section">
+                  <span class="wl-sort-label">Side</span>
+                  <div class="wl-sort-chip-row">
+                    <button class="wl-sort-chip" data-tb-side="ALL">All</button>
+                    <button class="wl-sort-chip" data-tb-side="BUY">Buy</button>
+                    <button class="wl-sort-chip" data-tb-side="SELL">Sell</button>
+                  </div>
+                </div>
+                <button class="wl-sort-clear" id="tbFilterClear">Clear</button>
+              </div>
+            </div>
+            <button class="panel-action" id="tbExportPdfBtn">⬇ Export PDF</button>
+            <button class="panel-action" id="tbExportCsvBtn">⬇ Export CSV</button>
+            <span class="panel-badge" id="tbCount">0 trades</span>
+          </div>
+        </div>
+        <div class="table-scroll">
+          <table class="data-table" id="tbTable">
+            <thead>
+              <tr>
+                <th>Symbol</th>
+                <th>Side</th>
+                <th class="col-hide-mobile">Type</th>
+                <th class="align-right">Qty</th>
+                <th class="align-center">Price</th>
+                <th class="align-center col-hide-mobile">Total</th>
+                <th class="align-right col-hide-mobile">Realized P&amp;L</th>
+                <th class="col-hide-mobile">Date &amp; Time</th>
+              </tr>
+            </thead>
+            <tbody id="tbBody">
+              <tr><td colspan="8" style="text-align:center; color:var(--text-3); padding:32px 20px;">Loading trades…</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </section>
+
+    <!-- ── TAB 3: PORTFOLIO ANALYSER ───────────────────────────── -->
+    <section class="report-panel" id="tab-analyser">
+      <section class="cards-row" id="anStatsRow">
+        <div class="stat-card">
+          <span class="stat-label">Holdings</span>
+          <span class="stat-value mono" id="anHoldingCount">0</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-label">Total Invested</span>
+          <span class="stat-value mono" id="anInvested">₹0.00</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-label">Current Value</span>
+          <span class="stat-value mono" id="anCurrent">₹0.00</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-label">Best Performer</span>
+          <span class="stat-value mono" id="anBest">—</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-label">Worst Performer</span>
+          <span class="stat-value mono" id="anWorst">—</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-label">Diversification</span>
+          <span class="stat-value mono" id="anDiversification">—</span>
+        </div>
+      </section>
+
+      <div class="chart-card" id="anPerfCard">
+        <div class="chart-card-title">Performance — Cumulative Realized P&amp;L Over Time</div>
+        <div id="anPerfChart"><span style="color:var(--text-3); font-size:12px;">Loading…</span></div>
+      </div>
+
+      <div class="analyser-charts">
+        <div class="chart-card">
+          <div class="chart-card-title">Allocation by Current Value</div>
+          <div class="donut-wrap" id="anDonutWrap">
+            <span style="color:var(--text-3); font-size:12px;">Loading…</span>
+          </div>
+        </div>
+        <div class="chart-card">
+          <div class="chart-card-title">P&amp;L by Holding</div>
+          <div class="pnl-bars" id="anPnlBars">
+            <span style="color:var(--text-3); font-size:12px;">Loading…</span>
+          </div>
+        </div>
+      </div>
+
+      <section class="panel panel-full">
+        <div class="panel-header">
+          <h2 class="panel-title">Portfolio Allocation</h2>
+          <span class="panel-badge" id="anAllocCount">0 scrips</span>
+        </div>
+        <div class="table-scroll">
+          <table class="data-table" id="anTable">
+            <thead>
+              <tr>
+                <th>Symbol</th>
+                <th class="align-right">Qty</th>
+                <th class="align-right">Avg. Price</th>
+                <th class="align-right">LTP</th>
+                <th class="align-right">Current Value</th>
+                <th class="align-right">P&amp;L</th>
+                <th class="align-right">Weight</th>
+              </tr>
+            </thead>
+            <tbody id="anBody">
+              <tr><td colspan="7" style="text-align:center; color:var(--text-3); padding:32px 20px;">Loading…</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </section>
+  </main>
+
+  <!-- ── MOBILE ACTION SHEET (Portfolio Allocation row tap -> full detail) ── -->
+  <div class="action-sheet-backdrop" id="actionSheetBackdrop">
+    <div class="action-sheet">
+      <div class="action-sheet-handle"></div>
+      <p class="action-sheet-title" id="sheetSymbol">RELIANCE</p>
+      <p class="action-sheet-sub" id="sheetExch">NSE</p>
+
+      <div class="sheet-detail-grid">
+        <div class="sheet-detail-item">
+          <span class="sheet-detail-label">Qty</span>
+          <span class="sheet-detail-val" id="sheetQty">—</span>
+        </div>
+        <div class="sheet-detail-item">
+          <span class="sheet-detail-label">Avg. Price</span>
+          <span class="sheet-detail-val" id="sheetAvgPrice">—</span>
+        </div>
+        <div class="sheet-detail-item">
+          <span class="sheet-detail-label">LTP</span>
+          <span class="sheet-detail-val" id="sheetLtp">—</span>
+        </div>
+        <div class="sheet-detail-item">
+          <span class="sheet-detail-label">Current Value</span>
+          <span class="sheet-detail-val" id="sheetCurrent">—</span>
+        </div>
+        <div class="sheet-detail-item">
+          <span class="sheet-detail-label">P&amp;L</span>
+          <span class="sheet-detail-val" id="sheetPnl">—</span>
+        </div>
+        <div class="sheet-detail-item">
+          <span class="sheet-detail-label">Weight</span>
+          <span class="sheet-detail-val" id="sheetWeight" style="display:flex; align-items:center; gap:8px;">—</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── MOBILE ACTION SHEET (TradeBook row tap -> Type/Total/P&L/Date detail) ── -->
+  <div class="action-sheet-backdrop" id="tbActionSheetBackdrop">
+    <div class="action-sheet">
+      <div class="action-sheet-handle"></div>
+      <p class="action-sheet-title" id="tbSheetSymbol">RELIANCE</p>
+      <p class="action-sheet-sub" id="tbSheetExch">NSE</p>
+
+      <div class="sheet-detail-grid">
+        <div class="sheet-detail-item">
+          <span class="sheet-detail-label">Side</span>
+          <span class="sheet-detail-val" id="tbSheetSide">—</span>
+        </div>
+        <div class="sheet-detail-item">
+          <span class="sheet-detail-label">Type</span>
+          <span class="sheet-detail-val" id="tbSheetType">—</span>
+        </div>
+        <div class="sheet-detail-item">
+          <span class="sheet-detail-label">Price</span>
+          <span class="sheet-detail-val" id="tbSheetPrice">—</span>
+        </div>
+        <div class="sheet-detail-item">
+          <span class="sheet-detail-label">Total</span>
+          <span class="sheet-detail-val" id="tbSheetTotal">—</span>
+        </div>
+        <div class="sheet-detail-item">
+          <span class="sheet-detail-label">Realized P&amp;L</span>
+          <span class="sheet-detail-val" id="tbSheetPnl">—</span>
+        </div>
+        <div class="sheet-detail-item" style="grid-column: 1 / -1;">
+          <span class="sheet-detail-label">Date &amp; Time</span>
+          <span class="sheet-detail-val" id="tbSheetDateTime">—</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── MOBILE ACTION SHEET (Realized P&L by Symbol row tap -> full detail) ── -->
+  <div class="action-sheet-backdrop" id="pnlActionSheetBackdrop">
+    <div class="action-sheet">
+      <div class="action-sheet-handle"></div>
+      <p class="action-sheet-title" id="pnlSheetSymbol">RELIANCE</p>
+      <p class="action-sheet-sub" id="pnlSheetExch">NSE</p>
+
+      <div class="sheet-detail-grid">
+        <div class="sheet-detail-item">
+          <span class="sheet-detail-label">Sells</span>
+          <span class="sheet-detail-val" id="pnlSheetSells">—</span>
+        </div>
+        <div class="sheet-detail-item">
+          <span class="sheet-detail-label">Qty Sold</span>
+          <span class="sheet-detail-val" id="pnlSheetQty">—</span>
+        </div>
+        <div class="sheet-detail-item">
+          <span class="sheet-detail-label">Sell Value</span>
+          <span class="sheet-detail-val" id="pnlSheetSellValue">—</span>
+        </div>
+        <div class="sheet-detail-item">
+          <span class="sheet-detail-label">Return %</span>
+          <span class="sheet-detail-val" id="pnlSheetReturn">—</span>
+        </div>
+        <div class="sheet-detail-item" style="grid-column: 1 / -1;">
+          <span class="sheet-detail-label">Realized P&amp;L</span>
+          <span class="sheet-detail-val" id="pnlSheetPnl">—</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="toast" id="toast"></div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.8.2/jspdf.plugin.autotable.min.js"></script>
+  <script src="idle-timeout.js"></script>
+  <script src="reports.js"></script>
+</body>
+
+</html>

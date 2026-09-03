@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Page Not Found — PaperDesk</title>
+  <meta name="robots" content="noindex" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="marketing.css" />
+  <link rel="icon" type="image/png" href="assets/download (2).png" />
+</head>
+
+<body class="mkt-body">
+
+  <!-- ── NAVBAR ───────────────────────────────────────────────── -->
+  <header class="navbar">
+    <div class="nav-inner">
+      <a href="landing.html" class="brand">
+        <span class="brand-mark">
+          <img src="assets/download (1).png" alt="PaperDesk Logo">
+        </span>
+        <div class="brand-text">
+          <span class="brand-name">PaperDesk</span>
+          <span class="brand-tagline">Learn Before You Earn</span>
+        </div>
+      </a>
+
+      <nav class="nav-links">
+        <a href="product.html" class="nav-link">Product</a>
+        <a href="features.html" class="nav-link">Features</a>
+        <a href="pricing.html" class="nav-link">Pricing</a>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+          <span class="theme-icon sun">☀</span>
+          <span class="theme-icon moon">◑</span>
+        </button>
+        <a href="login.html" class="nav-link js-auth-hide">Login</a>
+        <a href="login.html" class="btn-login js-auth-swap">Sign Up Free</a>
+      </div>
+
+      <button class="hamburger" id="hamburger" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="product.html" class="mobile-link">Product</a>
+      <a href="features.html" class="mobile-link">Features</a>
+      <a href="pricing.html" class="mobile-link">Pricing</a>
+      <a href="login.html" class="mobile-link js-auth-hide">Login</a>
+      <a href="login.html" class="mobile-link js-auth-swap">Sign Up Free</a>
+      <button class="mobile-link" id="mobileThemeToggle"
+        style="text-align:left; background:none; border:none; width:100%; cursor:pointer;">Toggle Theme</button>
+    </div>
+  </header>
+
+  <!-- ── 404 ──────────────────────────────────────────────────── -->
+  <main class="mkt-main">
+    <section class="mkt-error">
+      <div class="mkt-error-inner">
+        <div class="mkt-error-code">404</div>
+        <span class="mkt-error-ticker">▼ PAGE-NOT-FOUND · DELISTED</span>
+        <h1>This page didn't make the cut.</h1>
+        <p>The page you're looking for has been moved, renamed, or never existed.
+          Let's get you back to a chart that actually loads.</p>
+        <div class="mkt-error-actions">
+          <a href="index.html" class="mkt-btn mkt-btn-primary">Go to Dashboard</a>
+          <a href="landing.html" class="mkt-btn mkt-btn-ghost">Back to Home</a>
+        </div>
+        <div class="mkt-error-meta">Error 404 · If you followed a link to get here, it may be broken</div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ── FOOTER ───────────────────────────────────────────────── -->
+  <footer class="mkt-footer">
+    <div class="mkt-footer-grid mkt-container">
+      <div>
+        <div class="mkt-footer-brand">
+          <img src="assets/download (1).png" alt="PaperDesk Logo">
+          <span class="mkt-footer-brand-name">PaperDesk</span>
+        </div>
+        <p class="mkt-footer-desc">Empowering the next generation of Indian traders with risk-free, institutional-grade
+          practice environments.</p>
+      </div>
+      <div>
+        <h5>Product</h5>
+        <ul>
+          <li><a href="index.html">Watchlist</a></li>
+          <li><a href="portfolio.html">Portfolio</a></li>
+          <li><a href="reports.html">Analytics</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Company</h5>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="mailto:paperdesk.support@gmail.com">Reach Out</a></li>
+          <li><a href="assets/docs/PaperDesk-User-Guide.pdf" target="_blank" rel="noopener">User Guide (PDF)</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Legal</h5>
+        <ul>
+          <li><a href="privacy.html">Privacy Policy</a></li>
+          <li><a href="terms.html">Terms of Service</a></li>
+          <li><a href="disclaimer.html">Disclaimer</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="mkt-footer-bottom">
+      <span>© 2026 PaperDesk. For educational purposes only.</span>
+      <div class="mkt-footer-socials">
+        <a href="#">Twitter</a>
+        <a href="#">LinkedIn</a>
+        <a href="#">Discord</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="marketing.js"></script>
+</body>
+
+</html>

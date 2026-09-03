@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Product — PaperDesk</title>
+  <link rel="icon" type="image/png" href="assets/download (2).png" />
+  <meta name="description" content="Watchlist, Portfolio, Orders, and Analytics — everything you need to practice trading on real NSE/BSE prices." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="marketing.css" />
+</head>
+
+<body class="mkt-body">
+
+  <!-- ── NAVBAR ───────────────────────────────────────────────── -->
+  <header class="navbar">
+    <div class="nav-inner">
+      <a href="landing.html" class="brand">
+        <span class="brand-mark">
+          <img src="assets/download (1).png" alt="PaperDesk Logo">
+        </span>
+        <div class="brand-text">
+          <span class="brand-name">PaperDesk</span>
+          <span class="brand-tagline">Learn Before You Earn</span>
+        </div>
+      </a>
+
+      <nav class="nav-links">
+        <a href="product.html" class="nav-link active">Product</a>
+        <a href="features.html" class="nav-link">Features</a>
+        <a href="pricing.html" class="nav-link">Pricing</a>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+          <span class="theme-icon sun">☀</span>
+          <span class="theme-icon moon">◑</span>
+        </button>
+        <a href="login.html" class="nav-link js-auth-hide">Login</a>
+        <a href="login.html" class="btn-login js-auth-swap">Sign Up Free</a>
+      </div>
+
+      <button class="hamburger" id="hamburger" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="product.html" class="mobile-link active">Product</a>
+      <a href="features.html" class="mobile-link">Features</a>
+      <a href="pricing.html" class="mobile-link">Pricing</a>
+      <a href="login.html" class="mobile-link js-auth-hide">Login</a>
+      <a href="login.html" class="mobile-link js-auth-swap">Sign Up Free</a>
+      <button class="mobile-link" id="mobileThemeToggle"
+        style="text-align:left; background:none; border:none; width:100%; cursor:pointer;">Toggle Theme</button>
+    </div>
+  </header>
+
+  <main class="mkt-main">
+
+    <!-- ── HEADER ───────────────────────────────────────────────── -->
+    <section class="mkt-hero" style="padding-bottom:24px;">
+      <div class="mkt-container" style="text-align:center; position:relative; z-index:1;">
+        <span class="mkt-pill" style="margin-left:auto; margin-right:auto;">🧭 One platform, four modules</span>
+        <h1 style="max-width:720px; margin:0 auto 20px;">Everything a trading desk needs, <em>minus the risk.</em></h1>
+        <p class="mkt-hero-sub" style="margin:0 auto;">
+          PaperDesk mirrors a real brokerage terminal — live prices, a real order book, and reports that hold you
+          accountable — so what you practice actually transfers.
+        </p>
+      </div>
+    </section>
+
+    <!-- ── MODULE 1 — WATCHLIST ────────────────────────────────── -->
+    <section class="mkt-section">
+      <div class="mkt-container mkt-split">
+        <div class="mkt-split-text mkt-reveal">
+          <span class="mkt-pill">01 · Watchlist</span>
+          <h2>Track what matters, live.</h2>
+          <p>Build focused watchlists across NSE and BSE. Real-time LTP, day change, and one tap to open a full order ticket — no tab-hopping.</p>
+          <div class="mkt-check-list">
+            <div class="mkt-check-item">
+              <span class="mkt-check-dot">✓</span>
+              <div><strong>Live LTP &amp; % change</strong><span>Streamed quotes with no noticeable lag.</span></div>
+            </div>
+            <div class="mkt-check-item">
+              <span class="mkt-check-dot">✓</span>
+              <div><strong>Custom sort &amp; groups</strong><span>Sort by change, volume, or your own order.</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="mkt-split-visual mkt-reveal">
+          <div class="panel mkt-mock-panel">
+            <div class="mkt-mock-header"><span class="mkt-mock-dot"></span><span class="mkt-mock-dot"></span><span class="mkt-mock-dot"></span></div>
+            <div class="mkt-mock-body">
+              <div class="mkt-mock-row"><span class="mkt-mock-sym">NIFTY 50</span><span class="mkt-mock-price positive">24,812.30</span></div>
+              <div class="mkt-mock-row"><span class="mkt-mock-sym">RELIANCE</span><span class="mkt-mock-price positive">₹2,945.10</span></div>
+              <div class="mkt-mock-row"><span class="mkt-mock-sym">HDFCBANK</span><span class="mkt-mock-price negative">₹1,442.20</span></div>
+              <div class="mkt-mock-row"><span class="mkt-mock-sym">TCS</span><span class="mkt-mock-price positive">₹4,002.50</span></div>
+              <div class="mkt-mock-row"><span class="mkt-mock-sym">INFY</span><span class="mkt-mock-price negative">₹1,589.75</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── MODULE 2 — PORTFOLIO ────────────────────────────────── -->
+    <section class="mkt-section" style="background:var(--bg-1); border-top:1px solid var(--border); border-bottom:1px solid var(--border);">
+      <div class="mkt-container mkt-split mkt-split-reverse">
+        <div class="mkt-split-visual mkt-reveal">
+          <div class="panel" style="padding:22px;">
+            <div class="mkt-widget-row" style="margin-bottom:16px;">
+              <span class="mkt-widget-label">Current Value</span>
+              <span style="font-family:var(--font-mono); font-weight:700; font-size:18px;">₹59,743.10</span>
+            </div>
+            <div class="mkt-widget-row">
+              <span class="mkt-widget-label">Unrealized P&amp;L</span>
+              <span class="positive" style="font-family:var(--font-mono); font-weight:700;">+₹230.04</span>
+            </div>
+            <div class="mkt-widget-bar" style="margin-bottom:16px;"><div class="mkt-widget-bar-fill" style="width:64%;"></div></div>
+            <div class="mkt-chip-row">
+              <span class="mkt-chip">TCS · 64.5%</span>
+              <span class="mkt-chip">CGPOWER · 31.5%</span>
+              <span class="mkt-chip">MOSCHIP · 3.8%</span>
+            </div>
+          </div>
+        </div>
+        <div class="mkt-split-text mkt-reveal">
+          <span class="mkt-pill">02 · Portfolio</span>
+          <h2>Holdings, allocation, and P&amp;L in one view.</h2>
+          <p>See invested vs. current value, per-holding P&amp;L, and allocation weight at a glance — the same lens fund managers use.</p>
+          <div class="mkt-check-list">
+            <div class="mkt-check-item">
+              <span class="mkt-check-dot">✓</span>
+              <div><strong>Live mark-to-market</strong><span>Holdings re-value against live LTP automatically.</span></div>
+            </div>
+            <div class="mkt-check-item">
+              <span class="mkt-check-dot">✓</span>
+              <div><strong>Allocation breakdown</strong><span>Instantly see which position is running your risk.</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── MODULE 3 — ORDERS ───────────────────────────────────── -->
+    <section class="mkt-section">
+      <div class="mkt-container mkt-split">
+        <div class="mkt-split-text mkt-reveal">
+          <span class="mkt-pill">03 · Orders</span>
+          <h2>A real order book, not a toy.</h2>
+          <p>Market, limit, and stop orders that fill against live prices — practice the exact workflow you'll use with real capital.</p>
+          <div class="mkt-check-list">
+            <div class="mkt-check-item">
+              <span class="mkt-check-dot">✓</span>
+              <div><strong>Market &amp; limit orders</strong><span>Buy/sell instantly or set your own price.</span></div>
+            </div>
+            <div class="mkt-check-item">
+              <span class="mkt-check-dot">✓</span>
+              <div><strong>Full order history</strong><span>Every fill, cancellation, and rejection logged.</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="mkt-split-visual mkt-reveal">
+          <div class="panel mkt-mock-panel">
+            <div class="mkt-mock-header"><span class="mkt-mock-dot"></span><span class="mkt-mock-dot"></span><span class="mkt-mock-dot"></span></div>
+            <div class="mkt-mock-body">
+              <div class="mkt-mock-row"><span class="mkt-mock-sym">TCS <span class="positive" style="font-size:11px; font-weight:700;">BUY</span></span><span class="mkt-mock-price">1 @ ₹2,878.90</span></div>
+              <div class="mkt-mock-row"><span class="mkt-mock-sym">CGPOWER <span class="negative" style="font-size:11px; font-weight:700;">SELL</span></span><span class="mkt-mock-price">18 @ ₹811.60</span></div>
+              <div class="mkt-mock-row"><span class="mkt-mock-sym">MOSCHIP <span class="positive" style="font-size:11px; font-weight:700;">BUY</span></span><span class="mkt-mock-price">10 @ ₹237.85</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── MODULE 4 — REPORTS ──────────────────────────────────── -->
+    <section class="mkt-section" style="background:var(--bg-1); border-top:1px solid var(--border); border-bottom:1px solid var(--border);">
+      <div class="mkt-container mkt-split mkt-split-reverse">
+        <div class="mkt-split-visual mkt-reveal">
+          <div class="panel" style="padding:22px;">
+            <div class="mkt-chip-row" style="margin-bottom:16px;">
+              <span class="mkt-chip">REALIZED P&amp;L</span>
+              <span class="mkt-chip">RETURN %</span>
+              <span class="mkt-chip">WIN RATE</span>
+            </div>
+            <div class="mkt-watch-row"><span class="mkt-watch-sym">TCS</span><span class="positive" style="font-family:var(--font-mono);">+₹343.15</span></div>
+            <div class="mkt-watch-row"><span class="mkt-watch-sym">BSE</span><span class="positive" style="font-family:var(--font-mono);">+₹110.25</span></div>
+            <div class="mkt-watch-row"><span class="mkt-watch-sym">MOSCHIP</span><span class="negative" style="font-family:var(--font-mono);">−₹42.10</span></div>
+          </div>
+        </div>
+        <div class="mkt-split-text mkt-reveal">
+          <span class="mkt-pill">04 · Reports</span>
+          <h2>Numbers that actually teach you something.</h2>
+          <p>TradeBook, realized P&amp;L by symbol, and portfolio analytics — filter by any date range and see exactly where your edge is.</p>
+          <div class="mkt-check-list">
+            <div class="mkt-check-item">
+              <span class="mkt-check-dot">✓</span>
+              <div><strong>TradeBook</strong><span>Every executed trade, exportable to PDF or CSV.</span></div>
+            </div>
+            <div class="mkt-check-item">
+              <span class="mkt-check-dot">✓</span>
+              <div><strong>Realized P&amp;L by symbol</strong><span>Know which names are actually making you money.</span></div>
+            </div>
+          </div>
+          <a href="login.html" class="mkt-btn mkt-btn-primary js-auth-swap">Explore the Dashboard</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── CTA ──────────────────────────────────────────────────── -->
+    <section class="mkt-section mkt-steps-section" style="text-align:center;">
+      <div class="mkt-container-narrow">
+        <h2 class="mkt-reveal">Ready to trade without the risk?</h2>
+        <p class="mkt-reveal" style="color:var(--text-2); margin-bottom:28px;">Get ₹10,00,000 in virtual capital the moment you sign up.</p>
+        <a href="login.html" class="mkt-btn mkt-btn-primary js-auth-swap mkt-reveal">Start Trading for Free</a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ── FOOTER ───────────────────────────────────────────────── -->
+  <footer class="mkt-footer">
+    <div class="mkt-footer-grid mkt-container">
+      <div>
+        <div class="mkt-footer-brand">
+          <img src="assets/download (1).png" alt="PaperDesk Logo">
+          <span class="mkt-footer-brand-name">PaperDesk</span>
+        </div>
+        <p class="mkt-footer-desc">Empowering the next generation of Indian traders with risk-free, institutional-grade practice environments.</p>
+      </div>
+      <div>
+        <h5>Product</h5>
+        <ul>
+          <li><a href="index.html">Watchlist</a></li>
+          <li><a href="portfolio.html">Portfolio</a></li>
+          <li><a href="reports.html">Analytics</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Company</h5>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="mailto:paperdesk.support@gmail.com">Reach Out</a></li>
+          <li><a href="assets/docs/PaperDesk-User-Guide.pdf" target="_blank" rel="noopener">User Guide (PDF)</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Legal</h5>
+        <ul>
+          <li><a href="privacy.html">Privacy Policy</a></li>
+          <li><a href="terms.html">Terms of Service</a></li>
+          <li><a href="disclaimer.html">Disclaimer</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="mkt-footer-bottom">
+      <span>© 2026 PaperDesk. For educational purposes only.</span>
+      <div class="mkt-footer-socials">
+        <a href="#">Twitter</a>
+        <a href="#">LinkedIn</a>
+        <a href="#">Discord</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="marketing.js"></script>
+</body>
+
+</html>

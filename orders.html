@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Orders — PaperDesk</title>
+  <link rel="icon" type="image/png" href="assets/download (2).png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <!-- ── NAVBAR ───────────────────────────────────────────────── -->
+  <header class="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="brand">
+        <span class="brand-mark">
+          <img src="assets/download (1).png" alt="PaperDesk Logo">
+        </span>
+        <div class="brand-text">
+          <span class="brand-name">PaperDesk</span>
+          <span class="brand-tagline">Learn Before You Earn</span>
+        </div>
+      </a>
+
+      <nav class="nav-links">
+        <a href="index.html" class="nav-link">Watchlist</a>
+        <a href="positions.html" class="nav-link">Positions</a>
+        <a href="portfolio.html" class="nav-link">Portfolio</a>
+        <a href="orders.html" class="nav-link active">Orders</a>
+        <a href="reports.html" class="nav-link">Reports</a>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+          <span class="theme-icon sun">☀</span>
+          <span class="theme-icon moon">◑</span>
+        </button>
+        <a href="login.html" class="btn-login" id="navLoginBtn">Login</a>
+        <div class="nav-user" id="navUser" style="display:none;">
+          <button class="avatar-btn" id="avatarBtn" aria-haspopup="true" aria-expanded="false">
+            <span class="avatar-circle" id="avatarInitial"></span>
+          </button>
+          <div class="avatar-dropdown" id="avatarDropdown">
+            <div class="avatar-dropdown-name" id="avatarDropdownName"></div>
+            <a href="profile.html" class="dropdown-item">Profile</a>
+            <button class="dropdown-item dropdown-item-danger" id="navLogout">Logout</button>
+          </div>
+        </div>
+      </div>
+
+      <button class="hamburger" id="hamburger" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="index.html" class="mobile-link">Watchlist</a>
+      <a href="positions.html" class="mobile-link">Positions</a>
+      <a href="portfolio.html" class="mobile-link">Portfolio</a>
+      <a href="orders.html" class="mobile-link">Orders</a>
+      <a href="reports.html" class="mobile-link">Reports</a>
+      <a href="profile.html" class="mobile-link" id="mobileProfileLink" style="display:none;">Profile</a>
+      <button class="mobile-link" id="mobileThemeToggle" style="text-align:left; background:none; border:none; width:100%; cursor:pointer;">Toggle Theme</button>
+      <a href="login.html" class="mobile-link" id="mobileLoginLink">Login</a>
+    </div>
+  </header>
+
+  <main class="main">
+    <p class="section-eyebrow" style="margin-top:8px;">Activity</p>
+    <h1 style="font-size:26px; font-weight:600; margin-bottom:20px;">Order History</h1>
+
+    <section class="panel panel-full orders-panel">
+      <div class="panel-header">
+        <h2 class="panel-title">All Orders</h2>
+        <span class="panel-badge" id="orderCount">0 orders</span>
+      </div>
+      <div class="table-scroll">
+        <table class="data-table" id="ordersTable">
+          <thead>
+            <tr>
+              <th>Symbol</th>
+              <th>Side</th>
+              <th class="col-hide-mobile">Type</th>
+              <th class="align-right">Qty</th>
+              <th class="align-center">Price</th>
+              <th class="align-center col-hide-mobile">Total</th>
+              <th>Status</th>
+              <th class="col-hide-mobile">Date &amp; Time</th>
+              <th class="align-right"></th>
+            </tr>
+          </thead>
+          <tbody id="ordersBody">
+            <tr><td colspan="9" style="text-align:center; color:var(--text-3); padding:32px 20px;">Loading orders…</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <!-- ── MOBILE ACTION SHEET (row tap -> Type/Total/Date/Time detail) ── -->
+  <div class="action-sheet-backdrop" id="actionSheetBackdrop">
+    <div class="action-sheet">
+      <div class="action-sheet-handle"></div>
+      <p class="action-sheet-title" id="sheetSymbol">RELIANCE</p>
+      <p class="action-sheet-sub" id="sheetExch">NSE</p>
+
+      <div class="sheet-detail-grid">
+        <div class="sheet-detail-item">
+          <span class="sheet-detail-label">Type</span>
+          <span class="sheet-detail-val" id="sheetType">—</span>
+        </div>
+        <div class="sheet-detail-item">
+          <span class="sheet-detail-label">Total</span>
+          <span class="sheet-detail-val" id="sheetTotal">—</span>
+        </div>
+        <div class="sheet-detail-item">
+          <span class="sheet-detail-label">Status</span>
+          <span class="sheet-detail-val" id="sheetStatus">—</span>
+        </div>
+        <div class="sheet-detail-item">
+          <span class="sheet-detail-label">Date &amp; Time</span>
+          <span class="sheet-detail-val" id="sheetDateTime">—</span>
+        </div>
+      </div>
+
+      <button class="action-sheet-btn" id="sheetCancelBtn" style="display:none; color:var(--negative);">✕ Cancel Order</button>
+    </div>
+  </div>
+
+  <div class="toast" id="toast"></div>
+  <script src="idle-timeout.js"></script>
+  <script src="orders.js"></script>
+</body>
+
+</html>

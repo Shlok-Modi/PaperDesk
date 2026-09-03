@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pricing — PaperDesk</title>
+  <link rel="icon" type="image/png" href="assets/download (2).png" />
+  <meta name="description" content="PaperDesk is free to start. See what's included and what's coming with Pro." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="marketing.css" />
+</head>
+
+<body class="mkt-body">
+
+  <!-- ── NAVBAR ───────────────────────────────────────────────── -->
+  <header class="navbar">
+    <div class="nav-inner">
+      <a href="landing.html" class="brand">
+        <span class="brand-mark">
+          <img src="assets/download (1).png" alt="PaperDesk Logo">
+        </span>
+        <div class="brand-text">
+          <span class="brand-name">PaperDesk</span>
+          <span class="brand-tagline">Learn Before You Earn</span>
+        </div>
+      </a>
+
+      <nav class="nav-links">
+        <a href="product.html" class="nav-link">Product</a>
+        <a href="features.html" class="nav-link">Features</a>
+        <a href="pricing.html" class="nav-link active">Pricing</a>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+          <span class="theme-icon sun">☀</span>
+          <span class="theme-icon moon">◑</span>
+        </button>
+        <a href="login.html" class="nav-link js-auth-hide">Login</a>
+        <a href="login.html" class="btn-login js-auth-swap">Sign Up Free</a>
+      </div>
+
+      <button class="hamburger" id="hamburger" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="product.html" class="mobile-link">Product</a>
+      <a href="features.html" class="mobile-link">Features</a>
+      <a href="pricing.html" class="mobile-link active">Pricing</a>
+      <a href="login.html" class="mobile-link js-auth-hide">Login</a>
+      <a href="login.html" class="mobile-link js-auth-swap">Sign Up Free</a>
+      <button class="mobile-link" id="mobileThemeToggle"
+        style="text-align:left; background:none; border:none; width:100%; cursor:pointer;">Toggle Theme</button>
+    </div>
+  </header>
+
+  <main class="mkt-main">
+
+    <!-- ── HEADER ───────────────────────────────────────────────── -->
+    <section class="mkt-hero" style="padding-bottom:16px;">
+      <div class="mkt-container" style="text-align:center; position:relative; z-index:1;">
+        <span class="mkt-pill" style="margin-left:auto; margin-right:auto;">💸 No card required</span>
+        <h1 style="max-width:640px; margin:0 auto 20px;">Simple pricing. <em>Free to start.</em></h1>
+        <p class="mkt-hero-sub" style="margin:0 auto;">
+          PaperDesk's core paper-trading experience is free — because the whole point is that you shouldn't
+          have to risk money just to learn how to not lose it.
+        </p>
+      </div>
+    </section>
+
+    <!-- ── PRICING GRID ─────────────────────────────────────────── -->
+    <section class="mkt-section-tight">
+      <div class="mkt-container">
+        <div class="mkt-pricing-grid">
+
+          <!-- Free -->
+          <div class="panel mkt-price-card mkt-reveal">
+            <span class="mkt-price-plan">Starter</span>
+            <div class="mkt-price-value">
+              <span class="mkt-price-amt">₹0</span>
+              <span class="mkt-price-period">/ forever</span>
+            </div>
+            <p class="mkt-price-desc">Everything you need to start paper trading today.</p>
+            <ul class="mkt-price-features">
+              <li><span class="mkt-check-dot">✓</span> ₹10,00,000 virtual capital</li>
+              <li><span class="mkt-check-dot">✓</span> Real-time NSE &amp; BSE prices</li>
+              <li><span class="mkt-check-dot">✓</span> Watchlist, Portfolio &amp; Orders</li>
+              <li><span class="mkt-check-dot">✓</span> TradeBook &amp; core analytics</li>
+              <li class="disabled"><span class="mkt-check-dot" style="background:var(--bg-3); color:var(--text-3);">–</span> Price &amp; indicator alerts</li>
+            </ul>
+            <a href="login.html" class="mkt-btn mkt-btn-ghost mkt-btn-block js-auth-swap">Start Free</a>
+          </div>
+
+          <!-- Pro (coming soon) -->
+          <div class="panel mkt-price-card featured mkt-reveal">
+            <span class="mkt-price-badge">Coming Soon</span>
+            <span class="mkt-price-plan">Pro</span>
+            <div class="mkt-price-value">
+              <span class="mkt-price-amt">TBD</span>
+            </div>
+            <p class="mkt-price-desc">For traders who want unlimited alerts and deeper analytics.</p>
+            <ul class="mkt-price-features">
+              <li><span class="mkt-check-dot">✓</span> Everything in Starter</li>
+              <li><span class="mkt-check-dot">✓</span> Unlimited price &amp; indicator alerts</li>
+              <li><span class="mkt-check-dot">✓</span> Advanced risk analytics (Sharpe, Beta, VaR)</li>
+              <li><span class="mkt-check-dot">✓</span> Multiple portfolios</li>
+              <li><span class="mkt-check-dot">✓</span> Priority support</li>
+            </ul>
+            <button class="mkt-btn mkt-btn-primary mkt-btn-block" disabled style="opacity:0.6; cursor:not-allowed;">Notify Me</button>
+          </div>
+
+          <!-- Campus -->
+          <div class="panel mkt-price-card mkt-reveal">
+            <span class="mkt-price-plan">Campus</span>
+            <div class="mkt-price-value">
+              <span class="mkt-price-amt">Custom</span>
+            </div>
+            <p class="mkt-price-desc">For trading clubs, colleges, and communities running group challenges.</p>
+            <ul class="mkt-price-features">
+              <li><span class="mkt-check-dot">✓</span> Everything in Starter</li>
+              <li><span class="mkt-check-dot">✓</span> Group leaderboards</li>
+              <li><span class="mkt-check-dot">✓</span> Bulk account provisioning</li>
+              <li><span class="mkt-check-dot">✓</span> Dedicated onboarding</li>
+            </ul>
+            <a href="mailto:paperdesk.support@gmail.com" class="mkt-btn mkt-btn-ghost mkt-btn-block">Talk to Us</a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ── FAQ ──────────────────────────────────────────────────── -->
+    <section class="mkt-section">
+      <div class="mkt-container">
+        <div class="mkt-section-head mkt-reveal">
+          <h2>Pricing questions</h2>
+          <p>Can't find what you're looking for? Reach out and we'll help.</p>
+        </div>
+        <div class="mkt-faq mkt-reveal">
+          <details class="panel mkt-faq-item">
+            <summary>Is PaperDesk really free?</summary>
+            <p>Yes — the core paper-trading experience, including live NSE/BSE prices, ₹10,00,000 virtual capital, Watchlist, Portfolio, Orders, and TradeBook, is free with no expiry and no card required.</p>
+          </details>
+          <details class="panel mkt-faq-item">
+            <summary>Is this real money trading?</summary>
+            <p>No. PaperDesk is a simulated environment for educational purposes only — you trade with virtual capital against live market prices, and no real money ever changes hands.</p>
+          </details>
+          <details class="panel mkt-faq-item">
+            <summary>What will Pro include?</summary>
+            <p>Pro is in development and will add unlimited price/indicator alerts, deeper risk analytics, and support for multiple portfolios. Pricing will be announced closer to launch.</p>
+          </details>
+          <details class="panel mkt-faq-item">
+            <summary>Can my college or trading club use PaperDesk?</summary>
+            <p>Yes — reach out about a Campus plan and we'll help you set up group challenges and leaderboards for your members.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ── FOOTER ───────────────────────────────────────────────── -->
+  <footer class="mkt-footer">
+    <div class="mkt-footer-grid mkt-container">
+      <div>
+        <div class="mkt-footer-brand">
+          <img src="assets/download (1).png" alt="PaperDesk Logo">
+          <span class="mkt-footer-brand-name">PaperDesk</span>
+        </div>
+        <p class="mkt-footer-desc">Empowering the next generation of Indian traders with risk-free, institutional-grade practice environments.</p>
+      </div>
+      <div>
+        <h5>Product</h5>
+        <ul>
+          <li><a href="index.html">Watchlist</a></li>
+          <li><a href="portfolio.html">Portfolio</a></li>
+          <li><a href="reports.html">Analytics</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Company</h5>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="mailto:paperdesk.support@gmail.com">Reach Out</a></li>
+          <li><a href="assets/docs/PaperDesk-User-Guide.pdf" target="_blank" rel="noopener">User Guide (PDF)</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Legal</h5>
+        <ul>
+          <li><a href="privacy.html">Privacy Policy</a></li>
+          <li><a href="terms.html">Terms of Service</a></li>
+          <li><a href="disclaimer.html">Disclaimer</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="mkt-footer-bottom">
+      <span>© 2026 PaperDesk. For educational purposes only.</span>
+      <div class="mkt-footer-socials">
+        <a href="#">Twitter</a>
+        <a href="#">LinkedIn</a>
+        <a href="#">Discord</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="marketing.js"></script>
+</body>
+
+</html>

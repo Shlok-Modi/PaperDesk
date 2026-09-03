@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Verify Code — PaperDesk</title>
+  <link rel="icon" type="image/png" href="assets/download (2).png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="login.css" />
+  <style>
+    .otp-row {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      margin: 8px 0 20px;
+    }
+
+    .otp-box {
+      width: 44px;
+      height: 52px;
+      text-align: center;
+      font-size: 22px;
+      font-weight: 600;
+      font-family: 'JetBrains Mono', monospace;
+      border-radius: 10px;
+      border: 1px solid var(--border, rgba(255, 255, 255, 0.15));
+      background: var(--input-bg, rgba(255, 255, 255, 0.04));
+      color: inherit;
+    }
+
+    .otp-box:focus {
+      outline: none;
+      border-color: var(--accent, #6c8cff);
+    }
+
+    .resend-row {
+      text-align: center;
+      font-size: 13px;
+      margin-top: 4px;
+    }
+
+    .resend-link {
+      background: none;
+      border: none;
+      color: var(--accent, #6c8cff);
+      cursor: pointer;
+      font-size: 13px;
+      padding: 0;
+    }
+
+    .resend-link:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+  </style>
+</head>
+
+<body class="auth-body">
+
+  <header class="navbar">
+    <div class="nav-inner">
+      <a href="landing.html" class="brand">
+        <span class="brand-mark">
+          <img src="assets/download (1).png" alt="PaperDesk Logo">
+        </span>
+
+        <div class="brand-text">
+          <span class="brand-name">PaperDesk</span>
+          <span class="brand-tagline">Learn Before You Earn</span>
+        </div>
+      </a>
+      <div class="nav-actions" style="margin-left:auto;">
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+          <span class="theme-icon sun">☀</span>
+          <span class="theme-icon moon">◑</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <div class="auth-layout" style="grid-template-columns: 1fr;">
+    <div class="auth-right">
+      <div class="auth-card">
+        <h2 style="font-size:20px; font-weight:600; margin-bottom:6px;">Enter verification code</h2>
+        <p class="stat-sub" style="margin-bottom:20px;" id="otpSubtitle">
+          We sent a 6-digit code to your email. It expires in 10 minutes.
+        </p>
+
+        <form class="auth-form" id="otpForm">
+          <div class="otp-row" id="otpRow">
+            <input class="otp-box" type="text" inputmode="numeric" maxlength="1" autocomplete="one-time-code" />
+            <input class="otp-box" type="text" inputmode="numeric" maxlength="1" />
+            <input class="otp-box" type="text" inputmode="numeric" maxlength="1" />
+            <input class="otp-box" type="text" inputmode="numeric" maxlength="1" />
+            <input class="otp-box" type="text" inputmode="numeric" maxlength="1" />
+            <input class="otp-box" type="text" inputmode="numeric" maxlength="1" />
+          </div>
+
+          <div class="form-error" id="otpError"></div>
+          <div class="form-error" id="otpSuccess"
+            style="display:none; color:var(--positive); background:rgba(0,200,150,0.08); border-color:rgba(0,200,150,0.25);">
+          </div>
+
+          <button type="submit" class="btn-auth" id="otpBtn">
+            <span class="btn-auth-text">Verify Code</span>
+            <span class="btn-auth-spinner" id="otpSpinner"></span>
+          </button>
+
+          <p class="resend-row">
+            Didn't get it?
+            <button type="button" class="resend-link" id="resendBtn">Resend code</button>
+          </p>
+
+          <p class="auth-switch">
+            <a href="login.html" class="form-link">Back to sign in</a>
+          </p>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <div class="toast" id="toast"></div>
+  <script src="verify-otp.js"></script>
+</body>
+
+</html>

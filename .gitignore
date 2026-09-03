@@ -1,0 +1,20 @@
+# Environment variables — NEVER commit real secrets
+api/.env
+.env
+.env.local
+*.env
+!.env.example
+!api/.env.example
+
+# PHP / server junk
+*.log
+error_log
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor/IDE
+.vscode/
+.idea/
+*.swp

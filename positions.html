@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Positions — PaperDesk</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" type="image/png" href="assets/download (2).png">
+</head>
+
+<body>
+
+  <!-- ── NAVBAR ───────────────────────────────────────────────── -->
+  <header class="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="brand">
+        <span class="brand-mark">
+          <img src="assets/download (1).png" alt="PaperDesk Logo">
+        </span>
+        <div class="brand-text">
+          <span class="brand-name">PaperDesk</span>
+          <span class="brand-tagline">Learn Before You Earn</span>
+        </div>
+      </a>
+
+      <nav class="nav-links">
+        <a href="index.html" class="nav-link">Watchlist</a>
+        <a href="positions.html" class="nav-link active">Positions</a>
+        <a href="portfolio.html" class="nav-link">Portfolio</a>
+        <a href="orders.html" class="nav-link">Orders</a>
+        <a href="reports.html" class="nav-link">Reports</a>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+          <span class="theme-icon sun">☀</span>
+          <span class="theme-icon moon">◑</span>
+        </button>
+        <a href="login.html" class="btn-login" id="navLoginBtn">Login</a>
+        <div class="nav-user" id="navUser" style="display:none;">
+          <button class="avatar-btn" id="avatarBtn" aria-haspopup="true" aria-expanded="false">
+            <span class="avatar-circle" id="avatarInitial"></span>
+          </button>
+          <div class="avatar-dropdown" id="avatarDropdown">
+            <div class="avatar-dropdown-name" id="avatarDropdownName"></div>
+            <a href="profile.html" class="dropdown-item">Profile</a>
+            <button class="dropdown-item dropdown-item-danger" id="navLogout">Logout</button>
+          </div>
+        </div>
+      </div>
+
+      <button class="hamburger" id="hamburger" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="index.html" class="mobile-link">Watchlist</a>
+      <a href="positions.html" class="mobile-link active">Positions</a>
+      <a href="portfolio.html" class="mobile-link">Portfolio</a>
+      <a href="orders.html" class="mobile-link">Orders</a>
+      <a href="reports.html" class="mobile-link">Reports</a>
+      <a href="profile.html" class="mobile-link" id="mobileProfileLink" style="display:none;">Profile</a>
+      <button class="mobile-link" id="mobileThemeToggle" style="text-align:left; background:none; border:none; width:100%; cursor:pointer;">Toggle Theme</button>
+      <a href="login.html" class="mobile-link" id="mobileLoginLink">Login</a>
+    </div>
+  </header>
+
+  <main class="main">
+    <p class="section-eyebrow" style="margin-top:8px;">Today's Trades</p>
+    <h1 style="font-size:26px; font-weight:600; margin-bottom:20px;">Positions</h1>
+
+    <!-- Summary stats -->
+    <section class="cards-row" id="statsRow">
+      <div class="stat-card">
+        <span class="stat-label">Invested Today</span>
+        <span class="stat-value mono" id="statInvested">₹0.00</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-label">Current Value</span>
+        <span class="stat-value mono" id="statCurrent">₹0.00</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-label">Day's P&amp;L</span>
+        <span class="stat-value mono" id="statPnl">₹0.00</span>
+        <span class="stat-pct mono" id="statPnlPct"></span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-label">Cash Available</span>
+        <span class="stat-value mono" id="statCash">₹0.00</span>
+      </div>
+    </section>
+
+    <section class="panel panel-full">
+      <div class="panel-header">
+        <h2 class="panel-title">Open Positions</h2>
+        <div style="display:flex; gap:8px; align-items:center;">
+          <div class="wl-sort-wrap">
+            <button class="panel-action" id="holdSortBtn" title="Sort & filter">⇅ Sort</button>
+            <div class="wl-sort-popover" id="holdSortPopover">
+              <div class="wl-sort-section">
+                <span class="wl-sort-label">Filter</span>
+                <div class="wl-sort-chip-row">
+                  <button class="wl-sort-chip" data-filter-exch="ALL">All</button>
+                  <button class="wl-sort-chip" data-filter-exch="NSE">NSE</button>
+                  <button class="wl-sort-chip" data-filter-exch="BSE">BSE</button>
+                </div>
+              </div>
+              <div class="wl-sort-section">
+                <span class="wl-sort-label">Sort by</span>
+                <div class="wl-sort-option-list">
+                  <button class="wl-sort-option" data-sort-by="alpha">A–Z &nbsp;Alphabetically</button>
+                  <button class="wl-sort-option" data-sort-by="chg">%&nbsp; Change</button>
+                  <button class="wl-sort-option" data-sort-by="ltp">LTP &nbsp;Last Traded Price</button>
+                  <button class="wl-sort-option" data-sort-by="pnl">P&amp;L &nbsp;Profit &amp; Loss <span style="color:var(--text-3);">Absolute</span></button>
+                  <button class="wl-sort-option" data-sort-by="pnlpct">%&nbsp; Profit &amp; Loss <span style="color:var(--text-3);">Percent</span></button>
+                  <button class="wl-sort-option" data-sort-by="invested">₹&nbsp; Invested</button>
+                </div>
+              </div>
+              <div class="wl-sort-section">
+                <span class="wl-sort-label">Direction</span>
+                <div class="wl-sort-chip-row">
+                  <button class="wl-sort-chip" data-dir="asc">Ascending</button>
+                  <button class="wl-sort-chip" data-dir="desc">Descending</button>
+                </div>
+              </div>
+              <button class="wl-sort-clear" id="holdSortClear">Clear</button>
+            </div>
+          </div>
+          <button class="panel-action" id="exportPdfBtn">⬇ Export PDF</button>
+          <span class="panel-badge" id="holdingCount">0 positions</span>
+        </div>
+      </div>
+      <div class="table-scroll">
+        <table class="data-table" id="holdingsTable">
+          <thead>
+            <tr>
+              <th>Symbol</th>
+              <th class="align-right">Qty</th>
+              <th class="align-right">Avg. Price</th>
+              <th class="align-right">LTP</th>
+              <th class="align-right">Invested</th>
+              <th class="align-right">Current</th>
+              <th class="align-center">P&amp;L</th>
+              <th class="align-right">Action</th>
+            </tr>
+          </thead>
+          <tbody id="holdingsBody">
+            <tr><td colspan="8" style="text-align:center; color:var(--text-3); padding:32px 20px;">Loading positions…</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <!-- ── MOBILE ACTION SHEET (row tap -> full holding detail + Trade) ── -->
+  <div class="action-sheet-backdrop" id="actionSheetBackdrop">
+    <div class="action-sheet">
+      <div class="action-sheet-handle"></div>
+      <p class="action-sheet-title" id="sheetSymbol">RELIANCE</p>
+      <p class="action-sheet-sub" id="sheetExch">NSE</p>
+
+      <div class="sheet-detail-grid">
+        <div class="sheet-detail-item">
+          <span class="sheet-detail-label">Qty</span>
+          <span class="sheet-detail-val" id="sheetQty">—</span>
+        </div>
+        <div class="sheet-detail-item">
+          <span class="sheet-detail-label">Avg. Price</span>
+          <span class="sheet-detail-val" id="sheetAvgPrice">—</span>
+        </div>
+        <div class="sheet-detail-item">
+          <span class="sheet-detail-label">LTP</span>
+          <span class="sheet-detail-val" id="sheetLtp">—</span>
+        </div>
+        <div class="sheet-detail-item">
+          <span class="sheet-detail-label">Invested</span>
+          <span class="sheet-detail-val" id="sheetInvested">—</span>
+        </div>
+        <div class="sheet-detail-item">
+          <span class="sheet-detail-label">Current</span>
+          <span class="sheet-detail-val" id="sheetCurrent">—</span>
+        </div>
+        <div class="sheet-detail-item">
+          <span class="sheet-detail-label">P&amp;L</span>
+          <span class="sheet-detail-val" id="sheetPnl">—</span>
+        </div>
+      </div>
+
+      <button class="action-sheet-btn buy" id="sheetTradeBtn">💰 Trade</button>
+    </div>
+  </div>
+
+  <!-- ── ORDER MODAL (buy more / sell) ────────────────────────────── -->
+  <div class="modal-backdrop" id="modalBackdrop">
+    <div class="modal" id="orderModal">
+      <div class="modal-header">
+        <div>
+          <p class="modal-symbol" id="modalSymbol">RELIANCE</p>
+          <p class="modal-name" id="modalName">NSE</p>
+        </div>
+        <div class="modal-ltp-wrap">
+          <span class="modal-ltp" id="modalLtp">₹0.00</span>
+          <button class="modal-close" id="modalClose">✕</button>
+        </div>
+      </div>
+      <div class="modal-body">
+        <div class="seg-row">
+          <button class="seg-btn active buy" id="sideBuy">ADD MORE</button>
+          <button class="seg-btn sell" id="sideSell">EXIT</button>
+        </div>
+        <p class="market-order-note" id="orderTypeNote">Market order — executes instantly at the current live price.</p>
+        <div class="seg-row" id="orderTypeRow" style="grid-template-columns: repeat(4, 1fr); margin-bottom:10px;">
+          <button class="seg-btn ot-btn active" data-type="MARKET">Market</button>
+          <button class="seg-btn ot-btn" data-type="LIMIT">Limit</button>
+          <button class="seg-btn ot-btn" data-type="SL-M">SL-M</button>
+          <button class="seg-btn ot-btn" data-type="SL-L">SL-L</button>
+        </div>
+        <div class="field-row" id="priceFieldsRow" style="display:none;">
+          <div class="field" id="limitPriceField" style="display:none;">
+            <label class="field-label">Limit Price</label>
+            <input class="field-input" type="number" id="limitPriceInput" step="0.05" placeholder="0.00" />
+          </div>
+          <div class="field" id="triggerPriceField" style="display:none;">
+            <label class="field-label">Trigger Price</label>
+            <input class="field-input" type="number" id="triggerPriceInput" step="0.05" placeholder="0.00" />
+          </div>
+        </div>
+        <div class="field-row">
+          <div class="field">
+            <label class="field-label">Quantity</label>
+            <input class="field-input" type="number" id="qty" value="1" min="1" />
+          </div>
+          <div class="field">
+            <label class="field-label">Available to sell</label>
+            <input class="field-input" type="text" id="heldQtyDisplay" disabled value="—" />
+          </div>
+        </div>
+        <div class="order-summary">
+          <div class="summary-row">
+            <span>Estimated value</span>
+            <span class="mono" id="orderEst">—</span>
+          </div>
+          <div class="summary-row">
+            <span>Cash available</span>
+            <span class="mono" id="cashAvailable">—</span>
+          </div>
+        </div>
+        <button class="btn-place buy" id="placeBtn">Buy</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="toast" id="toast"></div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.8.2/jspdf.plugin.autotable.min.js"></script>
+  <script src="idle-timeout.js"></script>
+  <script src="positions.js"></script>
+</body>
+
+</html>

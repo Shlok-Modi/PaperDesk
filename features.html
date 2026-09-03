@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Features — PaperDesk</title>
+  <link rel="icon" type="image/png" href="assets/download (2).png" />
+  <meta name="description" content="Live NSE/BSE prices, a real order book, price alerts, portfolio tracking, and reports — every PaperDesk feature, free from day one." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="marketing.css" />
+</head>
+
+<body class="mkt-body">
+
+  <!-- ── NAVBAR ───────────────────────────────────────────────── -->
+  <header class="navbar">
+    <div class="nav-inner">
+      <a href="landing.html" class="brand">
+        <span class="brand-mark">
+          <img src="assets/download (1).png" alt="PaperDesk Logo">
+        </span>
+        <div class="brand-text">
+          <span class="brand-name">PaperDesk</span>
+          <span class="brand-tagline">Learn Before You Earn</span>
+        </div>
+      </a>
+
+      <nav class="nav-links">
+        <a href="product.html" class="nav-link">Product</a>
+        <a href="features.html" class="nav-link active">Features</a>
+        <a href="pricing.html" class="nav-link">Pricing</a>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+          <span class="theme-icon sun">☀</span>
+          <span class="theme-icon moon">◑</span>
+        </button>
+        <a href="login.html" class="nav-link js-auth-hide">Login</a>
+        <a href="login.html" class="btn-login js-auth-swap">Sign Up Free</a>
+      </div>
+
+      <button class="hamburger" id="hamburger" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="product.html" class="mobile-link">Product</a>
+      <a href="features.html" class="mobile-link active">Features</a>
+      <a href="pricing.html" class="mobile-link">Pricing</a>
+      <a href="login.html" class="mobile-link js-auth-hide">Login</a>
+      <a href="login.html" class="mobile-link js-auth-swap">Sign Up Free</a>
+      <button class="mobile-link" id="mobileThemeToggle"
+        style="text-align:left; background:none; border:none; width:100%; cursor:pointer;">Toggle Theme</button>
+    </div>
+  </header>
+
+  <main class="mkt-main">
+
+    <!-- ── HEADER ───────────────────────────────────────────────── -->
+    <section class="mkt-hero" style="padding-bottom:24px;">
+      <div class="mkt-container" style="text-align:center; position:relative; z-index:1;">
+        <span class="mkt-pill" style="margin-left:auto; margin-right:auto;">🧭 Everything, in one desk</span>
+        <h1 style="max-width:760px; margin:0 auto 20px;">Every feature, <em>laid out plainly.</em></h1>
+        <p class="mkt-hero-sub" style="margin:0 auto;">
+          No trial, no locked tiers — every feature below is live right now, free, the moment you sign up.
+        </p>
+
+        <div class="mkt-hero-stats" style="margin-top:32px; justify-content:center;">
+          <div class="mkt-hero-stat">
+            <span class="mkt-hero-stat-val">6,800+</span>
+            <span class="mkt-hero-stat-label">Tradable NSE/BSE Stocks</span>
+          </div>
+          <div class="mkt-hero-stat-div"></div>
+          <div class="mkt-hero-stat">
+            <span class="mkt-hero-stat-val">4</span>
+            <span class="mkt-hero-stat-label">Order Types</span>
+          </div>
+          <div class="mkt-hero-stat-div"></div>
+          <div class="mkt-hero-stat">
+            <span class="mkt-hero-stat-val">₹10L</span>
+            <span class="mkt-hero-stat-label">Virtual Capital</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── FEATURE GRID ─────────────────────────────────────────── -->
+    <section class="mkt-section">
+      <div class="mkt-container">
+        <div class="mkt-section-head mkt-reveal">
+          <h2>Built like a real brokerage terminal</h2>
+          <p>Every module below runs on live NSE/BSE prices — not simulated or delayed data.</p>
+        </div>
+
+        <div class="mkt-feature-grid">
+          <div class="panel mkt-feature-card mkt-reveal">
+            <div class="mkt-feature-icon">📈</div>
+            <h3>Live NSE &amp; BSE Prices</h3>
+            <p>Every quote comes straight from Angel One's live market feed — the same prices a real brokerage terminal shows.</p>
+            <div class="mkt-feature-widget">
+              <div class="mkt-watch-row">
+                <span class="mkt-watch-sym">TCS</span>
+                <span class="mkt-watch-price positive">₹4,002.50</span>
+              </div>
+              <div class="mkt-watch-row">
+                <span class="mkt-watch-sym">HDFCBANK</span>
+                <span class="mkt-watch-price negative">₹1,442.20</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="panel mkt-feature-card mkt-reveal">
+            <div class="mkt-feature-icon">🔖</div>
+            <h3>Smart Watchlist</h3>
+            <p>Build focused watchlists across NSE and BSE with live LTP and day change, one tap from a full order ticket.</p>
+          </div>
+
+          <div class="panel mkt-feature-card mkt-reveal">
+            <div class="mkt-feature-icon">💼</div>
+            <h3>Portfolio &amp; Holdings</h3>
+            <p>Holdings mark-to-market automatically against live prices, with per-position allocation so you always see what's driving your risk.</p>
+            <div class="mkt-chip-row">
+              <span class="mkt-chip">TCS · 64.5%</span>
+              <span class="mkt-chip">CGPOWER · 31.5%</span>
+            </div>
+          </div>
+
+          <div class="panel mkt-feature-card mkt-reveal">
+            <div class="mkt-feature-icon">📋</div>
+            <h3>A Real Order Book</h3>
+            <p>Market, Limit, SL-M, and SL-L orders that fill against live prices — not a toy simulator. Full PENDING → TRIGGERED → EXECUTED lifecycle.</p>
+          </div>
+
+          <div class="panel mkt-feature-card mkt-reveal">
+            <div class="mkt-feature-icon">🔔</div>
+            <h3>Price Alerts</h3>
+            <p>Set a trigger price and get notified the moment it's hit — via email and Telegram, whichever you have linked.</p>
+          </div>
+
+          <div class="panel mkt-feature-card mkt-reveal">
+            <div class="mkt-feature-icon">📊</div>
+            <h3>Reports &amp; TradeBook</h3>
+            <p>Realized P&amp;L by symbol, win rate, and a full TradeBook — filter by date range and export to PDF or CSV.</p>
+            <div class="mkt-chip-row">
+              <span class="mkt-chip">WIN RATE</span>
+              <span class="mkt-chip">REALIZED P&amp;L</span>
+            </div>
+          </div>
+
+          <div class="panel mkt-feature-card mkt-reveal">
+            <div class="mkt-feature-icon">🕒</div>
+            <h3>Market-Hours Protection</h3>
+            <p>Orders can only be placed while NSE/BSE is actually open (Mon–Fri, 9:15 AM–3:30 PM IST) — the same discipline a real desk enforces.</p>
+          </div>
+
+          <div class="panel mkt-feature-card mkt-reveal">
+            <div class="mkt-feature-icon">🔐</div>
+            <h3>Secure Sign-In</h3>
+            <p>Email OTP verification and Google Sign-In, with a real enforced password policy — not just a suggestion.</p>
+          </div>
+
+          <div class="panel mkt-feature-card mkt-reveal">
+            <div class="mkt-feature-icon">🧭</div>
+            <h3>Curated Stock Universe</h3>
+            <p>6,800+ genuinely tradable NSE/BSE equities, cross-checked against the exchanges' own official active-listing data — not a raw, unfiltered broker dump.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── ORDER TYPES ──────────────────────────────────────────── -->
+    <section class="mkt-section" style="background:var(--bg-1); border-top:1px solid var(--border); border-bottom:1px solid var(--border);">
+      <div class="mkt-container mkt-split">
+        <div class="mkt-split-text mkt-reveal">
+          <span class="mkt-pill">Order Types</span>
+          <h2>Trade the way you actually will with real money.</h2>
+          <p>Four order types, each behaving exactly like they would on a live brokerage terminal.</p>
+          <div class="mkt-check-list">
+            <div class="mkt-check-item">
+              <span class="mkt-check-dot">✓</span>
+              <div><strong>Market</strong><span>Fills instantly at the current live price.</span></div>
+            </div>
+            <div class="mkt-check-item">
+              <span class="mkt-check-dot">✓</span>
+              <div><strong>Limit</strong><span>Queued until the price crosses your limit, in your favour.</span></div>
+            </div>
+            <div class="mkt-check-item">
+              <span class="mkt-check-dot">✓</span>
+              <div><strong>SL-M (Stop-Loss Market)</strong><span>Fills at the live price once your stop is triggered.</span></div>
+            </div>
+            <div class="mkt-check-item">
+              <span class="mkt-check-dot">✓</span>
+              <div><strong>SL-L (Stop-Loss Limit)</strong><span>Becomes a live limit order once triggered, then fills at your limit.</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="mkt-split-visual mkt-reveal">
+          <div class="panel mkt-mock-panel">
+            <div class="mkt-mock-header"><span class="mkt-mock-dot"></span><span class="mkt-mock-dot"></span><span class="mkt-mock-dot"></span></div>
+            <div class="mkt-mock-body">
+              <div class="mkt-mock-row"><span class="mkt-mock-sym">TCS <span class="positive" style="font-size:11px; font-weight:700;">MARKET</span></span><span class="mkt-mock-price">1 @ ₹2,878.90</span></div>
+              <div class="mkt-mock-row"><span class="mkt-mock-sym">RELIANCE <span class="positive" style="font-size:11px; font-weight:700;">LIMIT</span></span><span class="mkt-mock-price">5 @ ₹2,900.00</span></div>
+              <div class="mkt-mock-row"><span class="mkt-mock-sym">CGPOWER <span class="negative" style="font-size:11px; font-weight:700;">SL-M</span></span><span class="mkt-mock-price">18 @ ₹800.00</span></div>
+              <div class="mkt-mock-row"><span class="mkt-mock-sym">MOSCHIP <span class="negative" style="font-size:11px; font-weight:700;">SL-L</span></span><span class="mkt-mock-price">10 @ ₹230.00</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── ALERTS ───────────────────────────────────────────────── -->
+    <section class="mkt-section">
+      <div class="mkt-container mkt-split mkt-split-reverse">
+        <div class="mkt-split-visual mkt-reveal">
+          <div class="panel" style="padding:22px;">
+            <div class="mkt-widget-row" style="margin-bottom:12px;">
+              <span class="mkt-widget-label">TCS Alert</span>
+              <span style="font-family:var(--font-mono); font-weight:700;">Above ₹2,199.00</span>
+            </div>
+            <div class="mkt-chip-row">
+              <span class="mkt-chip">📧 Email</span>
+              <span class="mkt-chip">📱 Telegram</span>
+            </div>
+          </div>
+        </div>
+        <div class="mkt-split-text mkt-reveal">
+          <span class="mkt-pill">Price Alerts</span>
+          <h2>Never miss the level you're watching.</h2>
+          <p>Set a trigger price on any symbol and PaperDesk watches it for you continuously — you'll hear about it the moment it hits, on whichever channel you've linked.</p>
+          <div class="mkt-check-list">
+            <div class="mkt-check-item">
+              <span class="mkt-check-dot">✓</span>
+              <div><strong>Always-on monitoring</strong><span>Checked against live prices every couple of seconds.</span></div>
+            </div>
+            <div class="mkt-check-item">
+              <span class="mkt-check-dot">✓</span>
+              <div><strong>Email, always included</strong><span>Every account gets alert emails — Telegram is optional, one link away.</span></div>
+            </div>
+          </div>
+          <a href="login.html" class="mkt-btn mkt-btn-primary js-auth-swap">Set Your First Alert</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── CTA ──────────────────────────────────────────────────── -->
+    <section class="mkt-section mkt-steps-section" style="text-align:center;">
+      <div class="mkt-container-narrow">
+        <h2 class="mkt-reveal">Ready to see it all in action?</h2>
+        <p class="mkt-reveal" style="color:var(--text-2); margin-bottom:28px;">Get ₹10,00,000 in virtual capital the moment you sign up.</p>
+        <a href="login.html" class="mkt-btn mkt-btn-primary js-auth-swap mkt-reveal">Start Trading for Free</a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ── FOOTER ───────────────────────────────────────────────── -->
+  <footer class="mkt-footer">
+    <div class="mkt-footer-grid mkt-container">
+      <div>
+        <div class="mkt-footer-brand">
+          <img src="assets/download (1).png" alt="PaperDesk Logo">
+          <span class="mkt-footer-brand-name">PaperDesk</span>
+        </div>
+        <p class="mkt-footer-desc">Empowering the next generation of Indian traders with risk-free, institutional-grade practice environments.</p>
+      </div>
+      <div>
+        <h5>Product</h5>
+        <ul>
+          <li><a href="index.html">Watchlist</a></li>
+          <li><a href="portfolio.html">Portfolio</a></li>
+          <li><a href="reports.html">Analytics</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Company</h5>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="mailto:paperdesk.support@gmail.com">Reach Out</a></li>
+          <li><a href="assets/docs/PaperDesk-User-Guide.pdf" target="_blank" rel="noopener">User Guide (PDF)</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Legal</h5>
+        <ul>
+          <li><a href="privacy.html">Privacy Policy</a></li>
+          <li><a href="terms.html">Terms of Service</a></li>
+          <li><a href="disclaimer.html">Disclaimer</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="mkt-footer-bottom">
+      <span>© 2026 PaperDesk. For educational purposes only.</span>
+      <div class="mkt-footer-socials">
+        <a href="#">Twitter</a>
+        <a href="#">LinkedIn</a>
+        <a href="#">Discord</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="marketing.js"></script>
+</body>
+
+</html>

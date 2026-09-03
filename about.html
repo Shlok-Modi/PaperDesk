@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>About Us — PaperDesk</title>
+  <link rel="icon" type="image/png" href="assets/download (2).png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Why PaperDesk exists, and who's building it." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="marketing.css" />
+</head>
+
+<body class="mkt-body">
+
+  <!-- ── NAVBAR ───────────────────────────────────────────────── -->
+  <header class="navbar">
+    <div class="nav-inner">
+      <a href="landing.html" class="brand">
+        <span class="brand-mark">
+          <img src="assets/download (1).png" alt="PaperDesk Logo">
+        </span>
+        <div class="brand-text">
+          <span class="brand-name">PaperDesk</span>
+          <span class="brand-tagline">Learn Before You Earn</span>
+        </div>
+      </a>
+
+      <nav class="nav-links">
+        <a href="product.html" class="nav-link">Product</a>
+        <a href="features.html" class="nav-link">Features</a>
+        <a href="pricing.html" class="nav-link">Pricing</a>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+          <span class="theme-icon sun">☀</span>
+          <span class="theme-icon moon">◑</span>
+        </button>
+        <a href="login.html" class="nav-link js-auth-hide">Login</a>
+        <a href="login.html" class="btn-login js-auth-swap">Sign Up Free</a>
+      </div>
+
+      <button class="hamburger" id="hamburger" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="product.html" class="mobile-link">Product</a>
+      <a href="features.html" class="mobile-link">Features</a>
+      <a href="pricing.html" class="mobile-link">Pricing</a>
+      <a href="login.html" class="mobile-link js-auth-hide">Login</a>
+      <a href="login.html" class="mobile-link js-auth-swap">Sign Up Free</a>
+      <button class="mobile-link" id="mobileThemeToggle"
+        style="text-align:left; background:none; border:none; width:100%; cursor:pointer;">Toggle Theme</button>
+    </div>
+  </header>
+
+  <main class="mkt-main">
+
+    <!-- ── HEADER ───────────────────────────────────────────────── -->
+    <section class="mkt-hero" style="padding-bottom:16px;">
+      <div class="mkt-container" style="text-align:center; position:relative; z-index:1;">
+        <span class="mkt-pill" style="margin-left:auto; margin-right:auto;">👋 About PaperDesk</span>
+        <h1 style="max-width:680px; margin:0 auto 20px;">Built so the first real mistake isn't <em>a costly one.</em></h1>
+        <p class="mkt-hero-sub" style="margin:0 auto;">
+          Most people's first encounter with the stock market is also their first time risking real money.
+          We think that's backwards — so we built the practice run first.
+        </p>
+      </div>
+    </section>
+
+    <!-- ── STORY ────────────────────────────────────────────────── -->
+    <section class="mkt-section">
+      <div class="mkt-container-narrow">
+        <div class="mkt-legal-section mkt-reveal">
+          <h2>Why we built this</h2>
+          <p>Every trader remembers their first order — and for a lot of people, it's also the trade that
+            taught them the most expensive lesson of their life. Market orders that filled at the wrong
+            price. Position sizes that made sense on paper but not in practice. Panic-selling on the first
+            red day. None of that has to be learned with real capital on the line.</p>
+          <p>PaperDesk exists to move that learning curve somewhere safer — a simulator close enough to a
+            real brokerage terminal that the habits you build here actually transfer, without the downside
+            of getting there the expensive way.</p>
+        </div>
+
+        <div class="mkt-legal-section mkt-reveal">
+          <h2>What we believe</h2>
+          <ul>
+            <li><strong>Practice should feel real.</strong> Live NSE/BSE prices, real order types, and a
+              genuine order book — not a toy with fake numbers.</li>
+            <li><strong>Risk-free means risk-free.</strong> No hidden funnel into real-money trading, no
+              pressure to "graduate" before you're ready.</li>
+            <li><strong>Understanding beats guessing.</strong> Reports and analytics that show you
+              <em>why</em> a strategy worked or didn't, not just whether it did.</li>
+          </ul>
+        </div>
+
+        <div class="mkt-legal-section mkt-reveal">
+          <h2>Who it's for</h2>
+          <p>Students learning how markets actually move. First-time investors who'd rather practice than
+            gamble. Experienced traders stress-testing a new strategy before committing real capital. Anyone
+            who's ever thought "I should really understand this before I put money into it."</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── REACH OUT ────────────────────────────────────────────── -->
+    <section class="mkt-section" style="background:var(--bg-1); border-top:1px solid var(--border);">
+      <div class="mkt-container-narrow" style="text-align:center;">
+        <h2 class="mkt-reveal" style="font-size:26px; font-weight:700; margin-bottom:10px;">Reach out</h2>
+        <p class="mkt-reveal" style="color:var(--text-2); margin-bottom:26px;">
+          Question, bug, or just want to say hi? We actually read these.
+        </p>
+        <a href="mailto:paperdesk.support@gmail.com" class="mkt-btn mkt-btn-primary mkt-reveal">paperdesk.support@gmail.com</a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ── FOOTER ───────────────────────────────────────────────── -->
+  <footer class="mkt-footer">
+    <div class="mkt-footer-grid mkt-container">
+      <div>
+        <div class="mkt-footer-brand">
+          <img src="assets/download (1).png" alt="PaperDesk Logo">
+          <span class="mkt-footer-brand-name">PaperDesk</span>
+        </div>
+        <p class="mkt-footer-desc">Empowering the next generation of Indian traders with risk-free, institutional-grade practice environments.</p>
+      </div>
+      <div>
+        <h5>Product</h5>
+        <ul>
+          <li><a href="index.html">Watchlist</a></li>
+          <li><a href="portfolio.html">Portfolio</a></li>
+          <li><a href="reports.html">Analytics</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Company</h5>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="mailto:paperdesk.support@gmail.com">Reach Out</a></li>
+          <li><a href="assets/docs/PaperDesk-User-Guide.pdf" target="_blank" rel="noopener">User Guide (PDF)</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Legal</h5>
+        <ul>
+          <li><a href="privacy.html">Privacy Policy</a></li>
+          <li><a href="terms.html">Terms of Service</a></li>
+          <li><a href="disclaimer.html">Disclaimer</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="mkt-footer-bottom">
+      <span>© 2026 PaperDesk. For educational purposes only.</span>
+      <div class="mkt-footer-socials">
+        <a href="#">Twitter</a>
+        <a href="#">LinkedIn</a>
+        <a href="#">Discord</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="marketing.js"></script>
+</body>
+
+</html>
